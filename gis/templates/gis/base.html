@@ -17,6 +17,7 @@
     <script type="text/javascript" src="http://ff.kis.v2.scr.kaspersky-labs.com/F62AD18B-86B6-E842-9C64-3334F60A3169/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="http://ff.kis.v2.scr.kaspersky-labs.com/692D028D-A2F8-E846-92B9-93E8C9E7FE6B/abn/main.css"/>
     -->
     <link href="{% static 'gis/style.css' %}"  rel="stylesheet">
+    {% block maphead %}{% endblock %}
   </head>
   <body>
 
@@ -46,8 +47,8 @@
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" action="https://www.google.com.ua/search" method="GET" name="f">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="q" value="">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
