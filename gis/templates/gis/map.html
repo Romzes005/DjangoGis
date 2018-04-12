@@ -13,25 +13,33 @@
       "esri/Map",
       "esri/views/MapView",
       "esri/widgets/Home",
+      "esri/widgets/BasemapToggle",
       "dojo/domReady!"
-    ], function(Map, MapView, Home) {
+    ], function(Map, MapView, Home, BasemapToggle) {
 
       var map = new Map({
-        basemap: "gray"
+        basemap: "topo"
       });
 
       var view = new MapView({
         container: "viewDiv",
         map: map,
         zoom: 4,
-        center: [15, 65] // longitude, latitude
+        center: [50.445836, 30.540364] // longitude, latitude
       });
 
       var homeBtn = new Home({
         view: view
       });
 
+       var toggle = new BasemapToggle({
+          // 2 - Set properties
+          view: view, // view that provides access to the map's 'topo' basemap
+          nextBasemap: "hybrid" // allows for toggling to the 'hybrid' basemap
+        });
+
       view.ui.add(homeBtn, "top-left");
+      view.ui.add(toggle, "top-right");
 
     });
   </script>
