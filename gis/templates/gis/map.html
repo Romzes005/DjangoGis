@@ -1,21 +1,23 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
-    <title>Locate Button</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.0.0/superhero/bootstrap.min.css" rel="stylesheet">
+
     <title>Map</title>
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
      <style>
          html, body {padding: 0;  background-color: #2B3E50;}
-         #map { margin-left: 5px;  position: absolute; height: 550px;  width: 850px;  border-radius: 5px; }
-         #LocateButton {position: absolute; top: 125px; left: 20px; z-index: 50; }
-         #HomeButton {  position: absolute; left:19px; top: 89px; z-index: 50; background-color: white; border-radius: 6px;}
-         #home {padding: 10px; text-align: center;  font-family: 'Arial',Georgia, Serif; border-radius: 2px; background-color: #DF691A; width: 150px;  margin-bottom: 15px;}
-         a {text-decoration: none;  color: #EBEBEB;}
-         #BasemapToggle { position: absolute; left: 763px; top: 10px;  z-index: 50; }
-         #mainWindow {right: 50px; position: absolute; background-color: darkgrey; color: black;  width: 400px; height: 140px; border-radius: 5px;}
+         #map {position: absolute; margin-left: 25px; top: 75px; height: 650px;  width: 1000px;  border-radius: 5px; }
+         #LocateButton {position: absolute; top: 125px; left: 20px; z-index: 50; background-color: white; border-radius: 10px; }
+         #HomeButton {position: absolute; left:19px; top: 89px; z-index: 50; background-color: white; border-radius: 10px;}
+         #BasemapToggle {position: absolute; left: 900px; top: 20px;  z-index: 50; }
+         #mainWindow {position: absolute; right: 95px; top: 135px;  background-color: #ADB9C5; color: black;  width: 310px; height: 310px; border-radius: 5px; z-index: 50; text-align: center; }
      </style>
     <script src="https://js.arcgis.com/3.20/"></script>
     <script>
@@ -65,11 +67,11 @@
               generateFeatureCollection(fileName);
             }
             else {
-              dom.byId('upload-status').innerHTML = '<p style="color:red">Add shapefile as .zip file</p>';
+              dom.byId('upload-status').innerHTML = '<p style="color:red">Please, follow the tutorial and try again</p>';
             }
           });
           map = new Map("map", {
-                center: [70.6508, 43.1452],
+                center: [28.67669, 50.26487],
                 zoom: 2,
                 basemap: "satellite"
               });
@@ -92,7 +94,7 @@
           function generateFeatureCollection (fileName) {
             var name = fileName.split(".");
             name = name[0].replace("c:\\fakepath\\", "");
-            dom.byId('upload-status').innerHTML = '<b>Loading… </b>' + name;
+            dom.byId('upload-status').innerHTML = "<p style='color:green'>" + 'Loading: '+ name  + "</p>";
             var params = {
               'name': name,
               'targetSR': map.spatialReference,
@@ -183,23 +185,60 @@
         });
      }());
     </script>
+
   </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="{% url 'home' %}">GisDevelopment</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'map' %}">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Projects</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Project 1, Part I: Modeling precipitation zones in Nebraska</a>
+              <a class="dropdown-item" href="#">Project 1, Part II: Creating contours for the Fox Lake DEM</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="https://www.google.com.ua/search" method="GET" name="f">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="q" value="">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  <body>
+
   <body class="claro">
-    <div id="home"><a href="{% url 'home' %}">Home</a></div>
     <div id="map">
         <div id="BasemapToggle"></div>
         <div id="LocateButton"></div>
         <div id="HomeButton"></div></div>
      <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline',gutters:false">
-          <div data-dojo-type="dijit/layout/ContentPane" id="rightPane" data-dojo-props="region:'right'">
-            <div><p>Add a zipped shapefile to the map.</p>
-                  <form enctype="multipart/form-data" method="post" id="uploadForm">
+          <div data-dojo-type="dijit/layout/ContentPane" id="topPane" data-dojo-props="region:'top'">
+              <form enctype="multipart/form-data" method="post" id="uploadForm">
                   <div class="field">
-                      <label class="file-upload">
-                          <span><strong>Add File</strong></span>
-                          <input type="file" name="file" id="inFile" />
-                      </label></div>
-                  </form>
+                  <label class="file-upload">
+                      <p><strong>Add shapefile as .zip file</strong></p>
+                      <span><em> Tutorial: <br>1. Create a .zip file that contains the .shp, .shx, .dbf, and .prj files that comprise the shapefile<br>
+                      2. The shapefile must be less than 10 MB in size and have less than 4,000 point features or 2,000 line or polygon features;<br>
+                      3. Compression formats other than a .zip archive are not supported. <hr></em></span>
+                      <input type="file" name="file" id="inFile" />
+                  </label></div>
+              </form>
                   <span class="file-upload-status"  id="upload-status"></span>
                   <div id="fileInfo">&nbsp;</div></div></div>
         <div id="mapCanvas" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
