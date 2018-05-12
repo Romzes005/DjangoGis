@@ -26,3 +26,15 @@ def about(request):
 
 def mymap(request):
     return render(request, 'gis/map.html')
+
+def task_1(request):
+    return render(request, 'gis/task_1.html')
+
+def task_2(request):
+    return render(request, 'gis/task_2.html')
+
+def task_3(request):
+    return render(request, 'gis/task_3.html')
+
+def task_4(request):
+    return render(request, 'gis/task_4.html')

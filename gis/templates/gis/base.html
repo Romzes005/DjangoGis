@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{% block title %}{% endblock %} &ndash; GIS</title>
+    <title>GIS: {% block title  %}{% endblock %}</title>
 
     <!-- Bootstrap core CSS-->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.0.0/superhero/bootstrap.min.css" rel="stylesheet">
@@ -41,11 +41,13 @@
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Projects</a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Projects</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Project 1, Part I: Modeling precipitation zones in Nebraska</a>
-              <a class="dropdown-item" href="#">Project 1, Part II: Creating contours for the Fox Lake DEM</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="{% url 'task_1' %}">Modeling precipitation zones in Nebraska</a>
+              <a class="dropdown-item" href="{% url 'task_2' %}">Creating contours for the Fox Lake DEM</a>
+              <a class="dropdown-item" href="{% url 'task_3' %}">Tool for vector datasets</a>
+              <a class="dropdown-item" href="{% url 'task_4' %}">Tool for analysis shapefiles</a>
+              <a class="dropdown-item" href="#">Updates are coming soon...</a>
             </div>
           </li>
         </ul>

@@ -21,4 +21,8 @@ urlpatterns = [
     url(r'^map/$', gis.views.mymap, name='map'),
     url(r'^about/$', gis.views.about, name='about'),
     url(r'^articles/(?P<article_id>[0-9]+)/$', gis.views.show_articles, name='article'),
+    url(r'^task_1/$', gis.views.task_1, name='task_1'),
+    url(r'^task_2/$', gis.views.task_2, name='task_2'),
+    url(r'^task_3/$', gis.views.task_3, name='task_3'),
+    url(r'^task_4/$', gis.views.task_4, name='task_4'),
 ]
