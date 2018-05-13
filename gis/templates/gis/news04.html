@@ -1,0 +1,56 @@
+{% extends 'gis/base.html' %}
+
+{% block title %}
+    GIS technology trends - 2017 review and 2018 forecast
+{% endblock %}
+
+{% block content %}
+
+    <div><strong><h1>GIS technology trends - 2017 review and 2018 forecast</h1></strong><br>
+        <p>We’ve seen a number of technologies start to change the way we approach Geographic Information Systems (GIS) in the enterprise space and how we interact with it at the desktop level<br>
+GIS is becoming more mainstream where it is accepted that everyone can access a map right in the application they are using.<br>
+To understand why this mindset is shifting, it is important to understand how 2017 technology trends have changed.</p>
+
+<p><strong> 1. Cloud infrastructure for enterprise systems</strong><br>
+	This is perhaps the greatest shift in technology in recent years and is now only starting to gain momentum. Going back five years, everyone was moving from bare metal servers running one individual server to multiple virtualised servers running on one computer.<br>
+
+	Now with the advent of cloud solutions and faster networking, these virtualised servers are being moved to the cloud. IT departments are no longer responsible for running and maintaining expensive hardware solutions and complex infrastructure. They are now simply deploying machines into the cloud.<br>
+
+	What would have taken days to build on virtualised hardware can be spun-up in the cloud in a matter of minutes. Most public tenders released today require solutions that are cloud-based or cloud-ready. Esri is embracing this by enhancing the ArcGIS Platform; ArcGIS Enterprise is designed specifically with cloud deployment in mind, optimised for web service delivery.</p>
+
+<p><strong> 2. Web services for data</strong><br>
+	By moving to the cloud, web services are becoming the norm for data delivery. However, this comes with its own challenges. No longer can you simply connect ArcGIS Desktop to the database and start editing. The connectivity to desktop from database suffers from high latency, affecting performance. What’s more, the way we interact with the stored database is changing. In the past, the map service was delivered to the web browser as rendered tiles. We are now seeing the rise of the web service for GIS data delivery – in particular the feature service. This provides the client with the ability to directly edit, analyse and interrogate the data. As this is handled by the server, it removes the need to connect to the database directly.<br>
+
+	With GIS toolsets that work with raw data, the GIS data is now being delivered as feature services. On client systems, each feature is individually rendered. This is a far more efficient way of delivering GIS data as it only displays what is needed on the screen at the time.<br>
+
+	Enter ArcGIS Pro, optimised to consume, display and edit web service delivered data as well as conventional client server methods.</p>
+
+<p><strong> 3. Apps instead of Applications</strong><br>
+The change to web services is also seeing a change in the way in which we interact with data. There will always be a need for ArcGIS Desktop but the number of users who actually require it to access GIS data is decreasing.<br>
+
+In the past, corporate web mapping applications would have all the data loaded and users would then select which layers to view. Now we see small web apps and mobile apps which consume web services for a focused outcome – lightweight apps designed for a purpose – an app for inspection, an app for analysis and an app for routing.</p>
+
+<p><strong> 4. Mobile GIS</strong><br>
+The world of the app is being driven by the explosion in availability and use of the smart device. Previously, field teams would take a GPS device with a copy of all the data, and a mobile GIS application to connect to the GPS and view the data.<br>
+
+Now with the advent of smart devices, we all have maps and GPS connectivity in our hands, and apps specifically built for a purpose. Esri makes a number of these: Explorer for viewing and redlining, Collector and Survey123 for in-field editing, Workforce for field force enablement, and AppStudio to create custom applications.<br>
+
+All connect to the inbuilt GPS of the device to +/- 5m accuracy; for greater accuracy, GPS vendors provide Bluetooth toolsets which can give sub-metre measurements.</p>
+
+<p><strong> 5. GIS is going 3D</strong><br>
+3D is perhaps the final area where we are seeing a monumental shift in the way data is delivered and consumed. In 2017 the 3D scene layer specification, which is delivered by ArcGIS Enterprise as a web service, was ratified by the Open Geospatial Consortium (OGC).<br>
+
+This effectively means that the scene layer web service is open standard; anyone can produce i3S specification data and anyone can consume it. The demand for 3D data is increasing; tenders are being delivered with 3D city models and entire LiDAR/point clouds with billions of points are being streamed over the internet for web visualisation.<br>
+
+As a web service, ArcGIS Pro is being optimised to consume, display and analyse this 3D data. Coming up, we will see web analysis tools increasing and the ability to edit enhanced – even real-time 3D data on the web.<br>
+
+Esri is developing 3D analysis tools such as the ArcGIS Pro Exploratory analysis toolset and the 3D measurement tools in the Scene browser to take advantage of this new space.</p>
+
+<p><strong> 6. So, what will be the geospatial tech trends of 2018?</strong><br>
+The trends we saw in 2017 will continue to improve the speed, scope, efficiency, accuracy and accessibility of GIS technology.<br>
+
+Coming up in 2018, one of the trends to watch will be machine learning. This science only really came to the forefront in 2017 with the advent of cloud computing technology.<br>
+Machines look for patterns in the data and modify their own internal algorithms without being explicitly programmed to do so. ArcGIS has long included aspects of machine learning, but the ability to tap into multiple machines at once, relatively cheaply, and perform analysis will see this capability expand into new industry applications. Here’s a good explanation of its capabilities.<br>
+
+One area of significant change will be in the growth of live data. The Internet of Things (IoT) is just starting to gain momentum. The ability to display live sensor data, weather feeds, vehicle tracking information and data feeds over a map will gain importance in places like control rooms and in operational dashboards. Faster internet speeds and the wide deployment of more sensors will see an explosion in the volume of data that can be recorded and analysed. The key will be in how organisations use this data to make more informed decisions about their operations.</p></p></div>
+{% endblock %}

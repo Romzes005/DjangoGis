@@ -27,14 +27,17 @@ def about(request):
 def mymap(request):
     return render(request, 'gis/map.html')
 
-def task_1(request):
-    return render(request, 'gis/task_1.html')
+def news01(request):
+    return render(request, 'gis/news01.html')
 
-def task_2(request):
-    return render(request, 'gis/task_2.html')
+def news02(request):
+    return render(request, 'gis/news02.html')
 
-def task_3(request):
-    return render(request, 'gis/task_3.html')
+def news03(request):
+    return render(request, 'gis/news03.html')
 
-def task_4(request):
-    return render(request, 'gis/task_4.html')
+def news04(request):
+    return render(request, 'gis/news04.html')
+
+def news05(request):
+    return render(request, 'gis/news05.html')

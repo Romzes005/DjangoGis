@@ -7,4 +7,10 @@
 {% block content %}
         <h1>{{ article.title|safe}}</h1>
         <p> {{ article.text|safe }}</p>
+        {% if article.image != None %}
+            <img src="{{ article.image.url }}" width="728">
+        {% else %}
+            <p></p>
+        {% endif %}
+
 {% endblock %}

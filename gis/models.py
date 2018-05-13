@@ -10,6 +10,7 @@ class Articles(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     user = models.ForeignKey(User)
+    image = models.ImageField(upload_to='images', blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -19,3 +20,4 @@ class Articles(models.Model):
             return self.text[:SHORT_TEXT_LEN]
         else:
             return self.text
+

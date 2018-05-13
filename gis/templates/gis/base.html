@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GIS: {% block title  %}{% endblock %}</title>
+    <title>{% block title  %}{% endblock %} - GisDevelopment</title>
 
     <!-- Bootstrap core CSS-->
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.0.0/superhero/bootstrap.min.css" rel="stylesheet">
@@ -41,12 +41,13 @@
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Projects</a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GIS News</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="{% url 'task_1' %}">Modeling precipitation zones in Nebraska</a>
-              <a class="dropdown-item" href="{% url 'task_2' %}">Creating contours for the Fox Lake DEM</a>
-              <a class="dropdown-item" href="{% url 'task_3' %}">Tool for vector datasets</a>
-              <a class="dropdown-item" href="{% url 'task_4' %}">Tool for analysis shapefiles</a>
+              <a class="dropdown-item" href="{% url 'news01' %}">What is GIS?</a>
+              <a class="dropdown-item" href="{% url 'news02' %}">What is GIS technology?</a>
+              <a class="dropdown-item" href="{% url 'news03' %}">History of GIS</a>
+              <a class="dropdown-item" href="{% url 'news04' %}">GIS technology trends - 2017 review and 2018 forecast</a>
+              <a class="dropdown-item" href="{% url 'news05' %}">Why it is time you invested in Big Data analytics tools</a>
               <a class="dropdown-item" href="#">Updates are coming soon...</a>
             </div>
           </li>
@@ -69,3 +70,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
   </body>
 </html>
+
