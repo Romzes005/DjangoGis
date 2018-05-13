@@ -6,7 +6,7 @@
 
 {% block content %}
     {% for article in articles %}
-        <p><b><a href="{% url 'article' article.id %}">{{ article.title |safe }}</a></b></p>
+        <h1><b><a href="{% url 'article' article.id %}">{{ article.title |safe }}</a></b></h1>
         <p><em>{{ article.get_short_text|safe }}</em></p>
     {% endfor %}
 {% endblock %}
